@@ -8,7 +8,7 @@
 local dampf_seatgenerator = {}
 
 function dampf_seatgenerator.generateSeatsArray (animation, crew, forward, group, transfArray)
-    passengers = {};
+    local passengers = {};
 
     for key, transf in ipairs(transfArray)
     do
@@ -23,10 +23,11 @@ function dampf_seatgenerator.generateSeatsArray (animation, crew, forward, group
     return passengers;
 end
 
-function dampf_seatgenerator.joinSeatsArrays (seatsArrays)
-    passengers = {};
+function dampf_seatgenerator.joinSeatsArrays (...)
+    local passengers = {};
+    local args = {...}
 
-    for key, seats in ipairs(seatsArrays)
+    for key, seats in ipairs(args)
     do
         for i, seat in ipairs(seats) do
             passengers[#passengers + 1] = seat;
@@ -35,4 +36,4 @@ function dampf_seatgenerator.joinSeatsArrays (seatsArrays)
     return passengers;
 end
 
-return dampf_seatgenerator;
+return damp

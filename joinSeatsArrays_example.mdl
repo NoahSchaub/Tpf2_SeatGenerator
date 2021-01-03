@@ -68,33 +68,31 @@ function data()
                 drivingLicense = "RAIL",
                 seats = dampf_seatgenerator.joinSeatsArrays(
                         {                                                                           -- put all calls of generateSeatsArray() or normal seat definitions in here
-                            {                                                                       -- when using vanilla definitions don't forget to add these brackets
-                                {
-                                    animation = "driving_upright",
-                                    crew = true,
-                                    forward = true,
-                                    group = 1,
-                                    transf = { 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, },
-                                },
-                                {
-                                    animation = "sitting",
-                                    crew = true,
-                                    forward = true,
-                                    group = 1,
-                                    transf = { 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 1, 1, },
-                                },
+                            {
+                                animation = "driving_upright",
+                                crew = true,
+                                forward = true,
+                                group = 1,
+                                transf = { 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, },
                             },
-                            dampf_seatgenerator.generateSeatsArray(
-                                    "sitting",
-                                    false,
-                                    true,
-                                    3,
-                                    {
-                                        { 1, 0, 0, 0, 1, 0, -0, 0, 0, 0, 1, 0, 0, 0, 0, 1, },
+                            {
+                                animation = "sitting",
+                                crew = true,
+                                forward = true,
+                                group = 1,
+                                transf = { 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 1, 1, },
+                            },
+                        },
+                        dampf_seatgenerator.generateSeatsArray(
+                                "sitting",
+                                false,
+                                true,
+                                3,
+                                {
+                                    {1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 1, 1, },
 
-                                    }
-                            ),
-                        }
+                                }
+                        )
                 )
             },
             transportVehicle = {
