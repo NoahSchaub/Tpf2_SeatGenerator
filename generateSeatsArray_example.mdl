@@ -1,0 +1,91 @@
+-- Imports the Generator into the mdl file
+local dampf_seatgenerator = require "dampf_seatgenerator"
+
+function data()
+    return {
+        boundingInfo = {
+            bbMax = { 9.14281, 0.335707, 3.42, },
+            bbMin = { -9.14281, -0.335707, -0.02687, },
+        },
+        collider = {
+            params = { },
+            transf = { 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, },
+            type = "MESH",
+        },
+        lods = {
+            {
+                node = {
+                    animations = { },
+                    children = {
+                        {
+                            materials = { "vehicle/waggon/zb_b_549.mtl", },
+                            mesh = "vehicle/waggon/zb_ewi_ffa/zb_ewi_ffa_b_lod1_body.msh",
+                            name = "MSH_zb_ewi_ffa_st_b_lod0_body_1",
+                            transf = { 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, },
+                        },
+                    },
+                    name = "RootNode",
+                    transf = { 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, },
+                },
+                static = false,
+                visibleFrom = 0,
+                visibleTo = 125,
+            },
+        },
+        metadata = {
+            availability = {
+                yearFrom = 0,
+                yearTo = 0,
+            },
+            cost = {
+                price = -1,
+            },
+            description = {
+                description = ("Seat Generator generateSeatsArray() Example"),
+                name = ("Not to be used"),
+            },
+            emission = {
+                idleEmission = -1,
+                powerEmission = -1,
+                speedEmission = -1,
+            },
+            maintenance = {
+                lifespan = 1,
+                runningCosts = -1,
+            },
+            railVehicle = {
+                configs = {
+                    {
+                        axles = { },
+                    },
+                },
+                engines = { },
+                topSpeed = 0.01,
+                weight = 100,
+            },
+            seatProvider = {
+                crewModels = { },
+                drivingLicense = "RAIL",
+                seats = dampf_seatgenerator.generateSeatsArray(
+                        "sitting", -- animation
+                        false, -- crew
+                        true, -- forward
+                        3, -- group Id
+                        {
+                            { 1, 0, 0, 0, 1, 0, -0, 0, 0, 0, 1, 0, 0, 0, 0, 1, },
+                            -- paste all transf arrays here
+
+                        }
+                ),
+            },
+            transportVehicle = {
+                carrier = "RAIL",
+                compartments = {},
+                loadSpeed = 0.1,
+                multipleUnitOnly = false,
+                reversible = false,
+            },
+        },
+        version = 1,
+    }
+end
