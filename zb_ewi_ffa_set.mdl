@@ -1,0 +1,83 @@
+function data()
+    local vec3 = require "vec3"
+    local transf = require "transf"
+    return {
+        boundingInfo = {
+            bbMax = { 9.14281, 0.335707, 3.42, },
+            bbMin = { -9.14281, -0.335707, -0.02687, },
+        },
+        collider = {
+            params = { },
+            transf = { 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, },
+            type = "MESH",
+        },
+        lods = {
+            {
+                node = {
+                    animations = { },
+                    children = {
+                        {
+                            _meshId = 1,
+                            _origMeshId = 1,
+                            materials = { "vehicle/waggon/zb_b_549.mtl", },
+                            mesh = "vehicle/waggon/zb_ewi_ffa/zb_ewi_ffa_b_lod1_body.msh",
+                            name = "MSH_zb_ewi_ffa_st_b_lod0_body_1",
+                            transf = { 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, },
+                        },
+                    },
+                    name = "RootNode",
+                    transf = { 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, },
+                },
+                static = false,
+                visibleFrom = 0,
+                visibleTo = 125,
+            },
+        },
+        metadata = {
+            availability = {
+                yearFrom = 9940,
+                yearTo = 9950,
+            },
+            cost = {
+                price = -1,
+            },
+            description = {
+                description = _("zb_ewi_ffa_set_desc"),
+                name = _("zb_ewi_ffa_set_name"),
+            },
+            emission = {
+                idleEmission = -1,
+                powerEmission = -1,
+                speedEmission = -1,
+            },
+            maintenance = {
+                lifespan = 1,
+                runningCosts = -1,
+            },
+            railVehicle = {
+                configs = {
+                    {
+                        axles = { },
+                    },
+                    {
+                        axles = { },
+                    },
+                    {
+                        backBackwardParts = { },
+                    },
+                },
+                engines = { },
+                topSpeed = 0.01,
+                weight = 100,
+            },
+            transportVehicle = {
+                carrier = "RAIL",
+                compartments = {},
+                loadSpeed = 0.1,
+                multipleUnitOnly = false,
+                reversible = false,
+            },
+        },
+        version = 1,
+    }
+end
